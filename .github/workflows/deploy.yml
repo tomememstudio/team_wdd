@@ -25,10 +25,12 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Build
-        run: npm run build -- --base=/team_wdd/
+      run: npm run build -- --base=/team_wdd/
+      env:
+    VITE_SERVER_URL: https://wdd330-backend-osp8.onrender.com/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
